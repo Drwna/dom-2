@@ -105,14 +105,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"main.js":[function(require,module,exports) {
 jQuery('.test').addClass('red').addClass('blue');
-
-// const api = jQuery('.test'); // 不返回元素门，返回 api 对象
-// api.addClass('red') // this 就是 api
-//     .addClass('blue')
-//     .addClass('black'); // 链式操作
-
-// obj.fn(p1); // 函数里的 this 就是 obj
-// obj.fn.call(obj, p1)
 },{}],"..\\..\\..\\..\\..\\..\\AppData\\Roaming\\npm\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
