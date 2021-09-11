@@ -5,9 +5,7 @@ window.jQuery = function (selectorOrArray) {
     } else if (selectorOrArray instanceof Array) {
         elements = selectorOrArray;
     }
-    // api 可以操作 elements
     return {
-        // 闭包： 函数访问外部变量
         addClass(className) {
             for (let i = 0; i < elements.length; i++) {
                 elements[i].classList.add(className);
@@ -17,14 +15,9 @@ window.jQuery = function (selectorOrArray) {
         find(selector) {
             let array = [];
             for (let i = 0; i < elements.length; i++) {
-                // const elements2 = Array.from(elements[i].querySelectorAll(selector));
-                // array = array.concat(elements2);
                 array = array.concat(Array.from(elements[i].querySelectorAll(selector)));
             }
-            // return this; 有个小 bug，不能返回 this
-            // const newApi = jQuery(array);
-            // return newApi;
-            array.oldApi = this; // this 是旧的 api
+            array.oldApi = this;
             return jQuery(array);
         },
         oldApi: selectorOrArray.oldApi,
@@ -53,7 +46,6 @@ window.jQuery = function (selectorOrArray) {
             const array = [];
             this.each((node) => {
                 array.push(...node.children); // 展开操作符
-                // array.push(node.children[0], node.children[1], node.children[2]);
             })
             return jQuery(array);
         }
