@@ -1,4 +1,4 @@
-window.jQuery = function (selectorOrArray) {
+window.jQuery = function (selectorOrArray) { // 实现jquery
     let elements;
     if (typeof selectorOrArray === 'string') {
         elements = document.querySelectorAll(selectorOrArray);
